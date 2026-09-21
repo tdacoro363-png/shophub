@@ -3,23 +3,34 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Product {
-  id                   String  @id
-  title                String
-  description          String?
-  price                Float
-  salePrice            Float?
-  discountPercentage   Float?
-  itemRating           Float?
-  likes                Int?
-  shopName             String?
-  imageLink            String?
-  productLink          String?
-  category1            String?
-  category2            String?
-  category3            String?
+  id                 String  @id
+  title              String
+  description        String?
+  price              Float
+  salePrice          Float?
+  discountPercentage Float?
+  shopRating         Float?
+  itemRating         Float?
+  likes              Int?
+  shopName           String?
+  imageLink          String?
+  imageLink3         String?
+  productLink        String?
+  productShortLink  String?
+  category1          String?
+  category2          String?
+  category3          String?
+  categoryId1        String?
+  categoryId2        String?
+  categoryId3        String?
+  cbOption           String?
+  condition          String?
+  modelIds           String?
+  modelNames         String?
 }
