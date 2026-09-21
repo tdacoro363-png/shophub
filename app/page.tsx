@@ -4,7 +4,7 @@ import Categoria from "@/app/components/Categoria";
 import ProductCard from "@/app/components/ProductCard";
 import Footer from "@/app/components/Footer";
 import { PrismaClient } from "@prisma/client";
-
+export const dynamic = "force-dynamic";
 const prisma = new PrismaClient();
 
 const POR_PAGINA = 24;

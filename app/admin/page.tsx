@@ -1,10 +1,10 @@
-import Header from "@/components/Header";
-import Banner from "@/components/Banner";
-import Categoria from "@/components/Categoria";
-import ProductCard from "@/components/ProductCard";
-import Footer from "@/components/Footer";
+import Header from "@/app/components/Header";
+import Banner from "@/app/components/Banner";
+import Categoria from "@/app/components/Categoria";
+import ProductCard from "@/app/components/ProductCard";
+import Footer from "@/app/components/Footer";
 import { PrismaClient } from "@prisma/client";
-
+export const dynamic = "force-dynamic";
 const prisma = new PrismaClient();
 
 export default async function Home() {
@@ -34,10 +34,10 @@ export default async function Home() {
 
           {produtos.map((produto) => (
             <ProductCard
-              key={produto.id}
-              nome={produto.title}
-              preco={String(produto.salePrice || produto.price)}
-            />
+  key={produto.id}
+  name={produto.title}
+  preco={Number(produto.salePrice || produto.price)}
+/>
           ))}
 
         </div>
